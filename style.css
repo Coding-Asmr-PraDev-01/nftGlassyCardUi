@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(22, 20, 24);
+    color: #eee;
+    user-select: none;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nftContainer{
+    max-width: 300px;
+    user-select:none;
+    border: 1px solid #ffffff22;
+    background-color: #282c34;
+    background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+    box-shadow: 0 7px 20px 5px #00000088;
+    border-radius: .7rem;
+    backdrop-filter: blur(7px);
+    overflow: hidden;
+    transition: 0.5s all;
+}
+
+hr{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #88888855;
+}
+
+.bg{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+.bg h1{
+    font-size: 130px;
+  background-color: #6e6d6d49;
+  color: transparent;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+  }
+
+.nftCard{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.nftCard::before{
+    position: fixed;
+    content: "";
+    box-shadow: 0 0 100px 140px rgba(255,255,255, 0.2);
+    top: -10%;
+    left: -100%;
+    transform: rotate(-45deg);
+    height: 60rem;
+    transition: .7s all;
+}
+
+.nftCard:hover{
+    border: 1px solid #ffffff44;
+    box-shadow: 0 7px 50px 10px #000000aa;
+    transform: scale(1.015);
+    filter: brightness(1.3);
+}
+
+.nftCard:hover::before{
+    filter: brightness(.5);
+    top: -100%;
+    left: 200%;
+}
+
+.nftCard .img{
+    border-radius: .5rem;
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.nftCard .description{
+    margin: .5rem 0;
+    color: #a89ec9;
+}
+
+.nftCard .tokenInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nftCard .tokenInfo .price{
+    display: flex;
+    align-items: center;
+    color: #ee83e5;
+    font-weight: 700;
+}
+
+.nftCard .tokenInfo .duration{
+    display: flex;
+    align-items: center;
+    color: #a89ec9;
+    margin-right: .2rem; 
+}
+
+.nftCard .tokenInfo .duration span{
+    color: #a89ec9;
+}
+
+.nftCard .userBx {
+    display: flex;
+    align-items: center;
+}
+
+.nftCard .userBx .imgBx{
+    position: relative;
+    border: 1px solid #ffffff22;
+    padding: .3rem;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    margin: 0;
+    margin-right: .5rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4px #000000aa;
+    border: 4px solid #ffffff22;
+}
+
+.nftCard .userBx .imgBx img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+
+
+
+  @media(max-width: 991px){
+    .bg h1{
+        font-size: 60px;
+    }
+  }
